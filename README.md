@@ -2,7 +2,7 @@
 
 A small Python tool for inspecting integer PCM WAV assets before audio delivery.
 
-This is a new portfolio exercise prepared for Matin Norouzi Nejad with AI assistance. It is not previous employment, a shipped game feature, or evidence of Wwise proficiency. The example audio is generated synthetically.
+A portfolio project exploring practical audio-delivery checks with Python. All demo audio is generated synthetically.
 
 ## Why it exists
 
@@ -56,8 +56,8 @@ Only uncompressed integer PCM WAV is supported; IEEE float WAV, compressed audio
 5. Run the tests, then inspect the source-file preservation and symlink-boundary tests.
 6. Discuss a future Wwise handoff based on the manifest. No Wwise implementation is claimed.
 
-## Authorship and presentation
+## Project status
 
-Prepared as an AI-assisted portfolio exercise for Matin Norouzi Nejad. Before presenting it as personal technical work, the applicant should run it, understand the implementation, and be able to explain or modify it. Do not describe it as production use, commercial delivery, or a past employer project.
+This is a portfolio prototype, with synthetic fixtures and an automated test suite. It has not been validated in a production audio pipeline.
 
 License: MIT.
