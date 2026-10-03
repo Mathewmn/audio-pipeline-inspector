@@ -1,0 +1,15 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audio Pipeline Inspector</title><style>
+body{font:16px/1.6 system-ui;background:#f6f7f8;color:#18242b;margin:0;padding:32px}main{max-width:1200px;margin:auto}
+h1{font-size:32px;margin-bottom:0}p{max-width:85ch}.stats{display:flex;gap:16px;flex-wrap:wrap;margin:24px 0}
+.stats span{background:white;border:1px solid #dae0e5;border-radius:8px;padding:12px 18px}select{font:inherit;padding:8px;margin:8px}
+.table{overflow:auto;background:white;border:1px solid #dae0e5}table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{padding:12px;text-align:left;border-bottom:1px solid #e5e8eb}th{background:#eef2f4}tr[data-status="error"]{background:#fff0ee}
+tr[data-status="warning"]{background:#fffbea}a{color:#125f89}footer{margin-top:24px;color:#52616c}
+</style><main><h1>Audio Pipeline Inspector</h1><p>Read-only asset checks for an audio delivery workflow. Flags are review prompts, not a guarantee of quality.</p>
+<div class="stats"><span><strong>5</strong> total</span><span><strong>2</strong> ok</span><span><strong>2</strong> warning</span><span><strong>1</strong> error</span></div>
+<label for="filter">Show assets</label><select id="filter"><option value="all">All</option><option>ok</option><option>warning</option><option>error</option></select>
+<div class="table"><table><thead><tr><th>Asset</th><th>Status</th><th>Seconds</th><th>Hz</th><th>Channels</th><th>Bits</th><th>Peak dBFS</th><th>Review notes</th></tr></thead><tbody><tr data-status="error"><td>broken_asset.wav</td><td>error</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>Cannot inspect WAV: file does not start with RIFF id</td></tr><tr data-status="ok"><td>duplicate_tone.wav</td><td>ok</td><td>1.0</td><td>48000</td><td>1</td><td>16</td><td>-10.31</td><td>No flagged issues</td></tr><tr data-status="warning"><td>rail_hits.wav</td><td>warning</td><td>1.0</td><td>48000</td><td>1</td><td>16</td><td>0.0</td><td>PCM rail hits: review clipping risk</td></tr><tr data-status="warning"><td>silence_check.wav</td><td>warning</td><td>1.0</td><td>48000</td><td>1</td><td>16</td><td>None</td><td>Digital silence</td></tr><tr data-status="ok"><td>tone_reference.wav</td><td>ok</td><td>1.0</td><td>48000</td><td>1</td><td>16</td><td>-10.31</td><td>No flagged issues</td></tr></tbody></table></div>
+<h2>Identical files</h2><ul><li>duplicate_tone.wav / tone_reference.wav</li></ul>
+<footer>Supports integer PCM WAV. No normalization, audio rewriting, Wwise connection, or inferred perceptual judgments.</footer></main>
+<script>document.getElementById('filter').addEventListener('change',function(){document.querySelectorAll('tbody tr').forEach(row=>row.hidden=this.value!=='all'&&row.dataset.status!==this.value);});</script></html>

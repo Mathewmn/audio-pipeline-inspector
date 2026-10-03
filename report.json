@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "tool_version": "1.0.0",
+  "scope": "Integer PCM WAV validation; no Wwise integration or perceptual quality scoring",
+  "summary": {
+    "total": 5,
+    "ok": 2,
+    "warning": 2,
+    "error": 1,
+    "duplicate_groups": 1
+  },
+  "duplicate_groups": [
+    [
+      "duplicate_tone.wav",
+      "tone_reference.wav"
+    ]
+  ],
+  "assets": [
+    {
+      "path": "broken_asset.wav",
+      "status": "error",
+      "issues": [
+        "Cannot inspect WAV: file does not start with RIFF id"
+      ],
+      "sha256": "a893a5a4b7d08a7c99f839da2a8a999521949ceada869d7e369b57e50cfa6975"
+    },
+    {
+      "path": "duplicate_tone.wav",
+      "status": "ok",
+      "issues": [],
+      "sha256": "91a2bf2c23990c2fdd9bcaff1513274f16f63edb1577957d6a5de1db563cbd6b",
+      "channels": 1,
+      "sample_rate": 48000,
+      "bit_depth": 16,
+      "frames": 48000,
+      "duration_seconds": 1.0,
+      "peak_dbfs": -10.31,
+      "rms_dbfs": -13.32,
+      "rail_hit_samples": 0,
+      "dc_offset_by_channel": [
+        0.0
+      ]
+    },
+    {
+      "path": "rail_hits.wav",
+      "status": "warning",
+      "issues": [
+        "PCM rail hits: review clipping risk"
+      ],
+      "sha256": "e1ba7c3212be2d98fa17ec3ebc5fe925e713051b7dd605898f092aeff0488d69",
+      "channels": 1,
+      "sample_rate": 48000,
+      "bit_depth": 16,
+      "frames": 48000,
+      "duration_seconds": 1.0,
+      "peak_dbfs": 0.0,
+      "rms_dbfs": -0.0,
+      "rail_hit_samples": 48000,
+      "dc_offset_by_channel": [
+        -1.5e-05
+      ]
+    },
+    {
+      "path": "silence_check.wav",
+      "status": "warning",
+      "issues": [
+        "Digital silence"
+      ],
+      "sha256": "0a8f76d89c709043814cb74f331a4578d17ff61256303bd0019a263d053f86e8",
+      "channels": 1,
+      "sample_rate": 48000,
+      "bit_depth": 16,
+      "frames": 48000,
+      "duration_seconds": 1.0,
+      "peak_dbfs": null,
+      "rms_dbfs": null,
+      "rail_hit_samples": 0,
+      "dc_offset_by_channel": [
+        0.0
+      ]
+    },
+    {
+      "path": "tone_reference.wav",
+      "status": "ok",
+      "issues": [],
+      "sha256": "91a2bf2c23990c2fdd9bcaff1513274f16f63edb1577957d6a5de1db563cbd6b",
+      "channels": 1,
+      "sample_rate": 48000,
+      "bit_depth": 16,
+      "frames": 48000,
+      "duration_seconds": 1.0,
+      "peak_dbfs": -10.31,
+      "rms_dbfs": -13.32,
+      "rail_hit_samples": 0,
+      "dc_offset_by_channel": [
+        0.0
+      ]
+    }
+  ]
+}
